@@ -16,7 +16,7 @@ app.use((req, res, next) => {
 });
 
 // Connect to MongoDB
-mongoose.connect('mongodb://localhost:27017/fashionDB')
+mongoose.connect('mongodb+srv://adithyagv:adith%40123@register.u88xr.mongodb.net/')
 .then(() => {
   console.log('Connected to MongoDB');
 }).catch((error) => {
@@ -101,7 +101,7 @@ app.get('/api/search', (req, res) => {
 });
 
 
-const PORT = process.env.PORT || 5001;
+const PORT = process.env.PORT || 5010;
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
