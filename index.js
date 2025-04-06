@@ -16,10 +16,8 @@ app.use((req, res, next) => {
 });
 
 // Connect to MongoDB
-mongoose.connect('mongodb://localhost:27017/fashionDB', {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-}).then(() => {
+mongoose.connect('mongodb://localhost:27017/fashionDB')
+.then(() => {
   console.log('Connected to MongoDB');
 }).catch((error) => {
   console.error('Error connecting to MongoDB:', error);
@@ -39,16 +37,16 @@ app.post('/register', async (req, res) => {
   try {
     const { name, email, password } = req.body;
 
-    // Check if user already exists
+    
     const existingUser = await User.findOne({ email });
     if (existingUser) {
       return res.status(400).json({ message: 'User already exists' });
     }
 
-    // Hash the password
+    
     const hashedPassword = await bcrypt.hash(password, 10);
 
-    // Create a new user
+    
     const newUser = new User({ name, email, password: hashedPassword });
     await newUser.save();
 
@@ -102,8 +100,8 @@ app.get('/api/search', (req, res) => {
   res.status(200).json(results);
 });
 
-// Start the server
-const PORT = process.env.PORT || 5000;
+
+const PORT = process.env.PORT || 5001;
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
