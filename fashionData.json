@@ -1,0 +1,21 @@
+[
+    {
+      "ProductID": "1",
+      "ProductName": "Red Summer Dress",
+      "ProductBrand": "Fashionista",
+      "Gender": "Female",
+      "Price": 49.99,
+      "NumImages": 3,
+      "Description": "A beautiful red summer dress perfect for any occasion.",
+      "PrimaryColor": "Red"
+    },
+    {
+      "ProductID": "2",
+      "ProductName": "Blue Denim Jacket",
+      "ProductBrand": "DenimPro",
+      "Gender": "Unisex",
+      "Description": "A stylish blue denim jacket that never goes out of style.",
+      "PrimaryColor": "Blue"
+    }
+   
+  ] 
